@@ -2,6 +2,8 @@
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
 
 namespace SubtitleTimeshift
 {
@@ -35,10 +37,18 @@ namespace SubtitleTimeshift
             }
         }
 
+        /// <summary>
+        /// Checks if the line read is the one with the time.
+        /// </summary>
         private static bool isTheTimeLine(string line)
         {
-            return false;
+            string timePattern = @"(\d+)[:,](\d+)[:,](\d+)[:,.](\d+)\b --> \b(\d+)[:,](\d+)[:,](\d+)[:,.](\d+)";
+            return Regex.IsMatch(line, timePattern);
         }
+
+        /// <summary>
+        /// Updates the time with the time span.
+        /// </summary>
         private static bool updateTime(string line, TimeSpan timeSpan)
         {
             return true;
