@@ -10,4 +10,10 @@
 /Graph.Tests/bin/Debug/netcoreapp3.1
 /Graph.Tests/obj
 /SubtitleTimeshift/obj
+/SubtitleTimeshift/bin
 /SubtitleTimeshift.Tests/obj
+/SubtitleTimeshift.Tests/bin
+
+.fake
+.ionide
+.vscode/
